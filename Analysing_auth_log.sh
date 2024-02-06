@@ -20,7 +20,11 @@ user_activity_summary() {
     echo "User Activity Summary:"
     grep "session opened" "$LOG_FILE" | awk '{print $11}' | sort | uniq -c
 }
-
+#find n last entries
+last_n_entries() {
+    echo "Last $NUM_ENTRIES Log Entries:"
+    tail -n "$NUM_ENTRIES" "$LOG_FILE"
+}
 # Function to display activity for a specific user
 user_activity() {
     echo "Activity for User: $USERNAME"
@@ -38,6 +42,7 @@ while getopts ":hf:sul:" opt; do
             echo "  -s  Display successful logins"
             echo "  -u  Display user activity summary"
             echo "  -l  Display activity for a specific user"
+            echo "  -n Display N-last entries"
             exit 0
             ;;
         f)
@@ -53,6 +58,12 @@ while getopts ":hf:sul:" opt; do
             USERNAME=$OPTARG
             user_activity
             ;;
+
+        n)
+            NUM_ENTRIES=$OPTARG
+            last_n_entries
+            ;;
+
         \?)
             echo "Invalid option: $OPTARG" 1>&2
             exit 1
