@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # defining log file to analyze
-LOG_FILE="/var/log/auth.log"
-#LOG_FILE="$0"
+#LOG_FILE="/var/log/auth.log"
+ LOG_FILE="$0"
 # Function to display failed login attempts
 failed_logins() {
     echo "Failed Login Attempts:"
