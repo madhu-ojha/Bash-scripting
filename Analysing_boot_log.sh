@@ -27,7 +27,10 @@ is_active(){
         echo "Service $service_name is not active or does not exist."
         fi
 }
-
+search_failed_services() {
+    echo -e "******** Failed Services *********\n"
+    sudo grep "Failed" "$log_file" | awk '{print $5}'
+}
 function_of_service(){
         echo "Enter a Service name:"
         read service_name
@@ -35,17 +38,19 @@ function_of_service(){
         grep "$service_name" "$log_file" | awk '{ print substr($0, index($0, $7)) }'
 
 }
-while getopts "acflh" opt; do
+while getopts "acflhz" opt; do
     case ${opt} in
         h)
-            echo "Usage: $0 [-h] [-f] [-a] [-c] [-l] "
+            echo "Usage: $0 [-h] [-f] [-a] [-c] [-l] [-z] "
             echo "Options:"
             echo "  -h  Display this help message"
             echo " -a Display whether the service is active"
             echo "  -f  Display Function of a service"
             echo " -l List the started services"
             echo "  -c  Display number of services started"
+            echo "  -z  Display failed services"
             exit 0
+
             ;;
         a) 
         is_active
@@ -63,6 +68,9 @@ while getopts "acflh" opt; do
         started_display
         ;;
          
+        z)
+        search_failed_services
+        ;;
 
    esac
    done
