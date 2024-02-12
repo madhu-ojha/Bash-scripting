@@ -15,3 +15,6 @@ Follow the steps below to use the script:
 
 2. Execute using this command:
    ./script_name.sh
+
+3. Some scripts need more privileges so using sudo is recommeded:
+   sudo ./script_name.sh
