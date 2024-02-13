@@ -1,3 +1,5 @@
+# This script creates a log file that stores cpu and memory utilization of every 5 seconds
+# script runs in infinite loop, press ctrl +c to stop the execution
 #!/bin/bash
 
 # Define the log file path
