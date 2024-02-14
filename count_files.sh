@@ -1,3 +1,6 @@
+# Script to count number of files in a directory
+# Run the script by adding execute permission
+# add directory name while executing the script i.e. ./count_files.sh [dir_name]
 #!/bin/bash
 
 # Ensure a directory is provided
