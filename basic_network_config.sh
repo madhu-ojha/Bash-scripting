@@ -1,3 +1,4 @@
+# Script to configure interface settings 
 #!/bin/bash
 
 # Prompt for network configuration details
