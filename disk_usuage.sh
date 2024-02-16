@@ -1,4 +1,5 @@
-
+# Script to view simple report of disk utilization of a directory  
+# displays the top 10 entries of directories consuming the most disk space.
 #!/bin/bash
 
 # Check if a directory is provided as an argument
