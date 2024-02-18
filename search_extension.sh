@@ -1,3 +1,5 @@
+# Script to search for files with the specified extension in the directory and its subdirectories
+# Usuage: ./search_extension.sh [directory_name]
 #!/bin/bash
 
 # Check if the correct number of arguments is provided
