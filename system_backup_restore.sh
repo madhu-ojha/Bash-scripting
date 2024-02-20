@@ -1,3 +1,5 @@
+#DISCLAIMER--Do not terminate or cancel the script in halfway, certain resources might get corrupted
+
 #!/bin/bash
 # Script to automate Kali Linux system maintenance tasks
 # Perform system backup (adjust destination directory as needed)
